@@ -25,4 +25,20 @@ public class GerenciamentoVotacao {
       pessoasCandidatas.add(novoCandidato);
     }
   }
+
+  public void cadastrarPessoaEleitora(String nome, String cpf) {
+    boolean ehEleitorCadastrado = false;
+    for (PessoaEleitora novoEleitor : this.pessoasEleitoras) {
+      if (novoEleitor.getCpf().equals(cpf)) {
+        ehEleitorCadastrado = true;
+        break;
+      }
+    }
+    if (ehEleitorCadastrado) {
+      System.out.println("Pessoa eleitora já cadastrada!");
+    } else {
+      PessoaEleitora novoEleitor = new PessoaEleitora(nome, cpf);
+      pessoasEleitoras.add(novoEleitor);
+    }
+  }
 }
