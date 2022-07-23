@@ -41,4 +41,19 @@ public class GerenciamentoVotacao {
       pessoasEleitoras.add(novoEleitor);
     }
   }
+
+  public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
+    if (this.cpfComputado.contains(cpfPessoaEleitora)) {
+      System.out.println("Pessoa eleitora já votou!");
+    } else {
+      for (PessoaCandidata pessoaCand : this.pessoasCandidatas) {
+        if (pessoaCand.getNumero() == numeroPessoaCandidata) {
+          pessoaCand.receberVoto();
+          this.cpfComputado.add(cpfPessoaEleitora);
+          this.totalVotos += 1;
+        }
+      }
+    }
+  }
+
 }
