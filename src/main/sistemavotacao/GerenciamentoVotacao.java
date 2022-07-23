@@ -1,5 +1,7 @@
 package main.sistemavotacao;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class GerenciamentoVotacao {
@@ -53,6 +55,23 @@ public class GerenciamentoVotacao {
           this.totalVotos += 1;
         }
       }
+    }
+  }
+
+  public void mostrarResultado() {
+    NumberFormat numberFormat = new DecimalFormat("#0.0");
+
+    if (this.totalVotos == 0) {
+      System.out.println("É preciso ter pelo menos um voto para mostrar o resultado.");
+    } else {
+      for (PessoaCandidata candidato : this.pessoasCandidatas) {
+        String nomeCand = candidato.getNome();
+        int votosCand = candidato.getVotos();
+        String total = numberFormat.format((candidato.getVotos() * 100) / this.totalVotos);
+        System.out.println("Nome: " + nomeCand);
+        System.out.println("Votos: " + votosCand + "( " + total + "% )");
+      }
+      System.out.println("Total de votos: " + this.totalVotos);
     }
   }
 
