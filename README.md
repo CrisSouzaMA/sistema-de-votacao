@@ -24,7 +24,7 @@ Neste projeto desenvolvi um sistem que interage com o usuário para cadastro de 
 ```bash
     # Clonar repositório
 
-    $ git clone git@github.com:CrisSouzaMA/controle-de-acesso.git
+    $ git clone git@github.com:CrisSouzaMA/sistema-de-votacao.git
 
     # Entrar no diretório
 
